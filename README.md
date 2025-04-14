@@ -1,4 +1,4 @@
-# MailPushRu
+# MailPushRU
 Оригинал - [тут](https://github.com/guo-yong-zhi/MailPush)
 
 For English users, there is a [fork](https://github.com/Darthagnon/MailPush).  
