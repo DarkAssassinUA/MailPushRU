@@ -1,85 +1,96 @@
 {
 	"items": [
 		{
-			"name": "MailPush",
+			"name": "MailPushRU",
 			"priority": 0,
 			"items": [
 				{
-					"name": "Fetch unread emails (past 2 days)",
+					"name": "Непрочитанные письма за 2 дня",
 					"priority": 1,
 					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox INBOX --criteria UNSEEN --maxage 2 --maxnum 100 >log.txt 2>&1",
 					"param": ""
 				},
 				{
-					"name": "Fetch unread emails (past 30 days)",
+					"name": "Непрочитанные письма за 30 дней",
 					"priority": 2,
 					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox INBOX --criteria UNSEEN --maxage 30 --maxnum 100 >log.txt 2>&1",
 					"param": ""
 				},
 				{
-					"name": "Fetch unread junk emails (past 2 days)",
+					"name": "Непрочитанные письма за 2 дня из корзины",
 					"priority": 3,
 					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox JUNK --criteria UNSEEN --maxage 2 --maxnum 100 >log.txt 2>&1",
 					"param": ""
 				},
 				{
-					"name": "Fetch 1 newest email (re-download)",
+					"name": "Последнее непрочитанное письмо (заново)",
 					"priority": 4,
 					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox INBOX --criteria ' ' --maxage 60 --maxnum 1 >log.txt 2>&1",
 					"param": ""
 				},
 				{
-					"name": "Fetch 3 newest emails (re-download)",
+					"name": "Последних 3 непрочитанных письма (заново)",
 					"priority": 5,
 					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox INBOX --criteria ' ' --maxage 60 --maxnum 3 >log.txt 2>&1",
 					"param": ""
 				},
 				{
-					"name": "Fetch 5 newest emails (re-download)",
+					"name": "Последних 5 непрочитанных писем(заново)",
 					"priority": 6,
 					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox INBOX --criteria ' ' --maxage 60 --maxnum 5 >log.txt 2>&1",
 					"param": ""
 				},
 				{
-					"name": "Fetch 1 newest junk email (re-download)",
+					"name": "Посл. непрочит. письмо из корзины(заново)",
 					"priority": 7,
 					"action": "./mailpush.sh python3 -u src/mailpush.py --mailbox JUNK --criteria ' ' --maxage 60 --maxnum 1 >log.txt 2>&1",
 					"param": ""
 				},
 				{
-					"name": "Fetch emails via config.json (custom)",
+					"name": "Письма согласно config.json(ручной режим)",
 					"priority": 8,
 					"action": "./mailpush.sh python3 -u src/mailpush.py >log.txt 2>&1",
 					"param": ""
 				},
 				{
-					"name": "View results",
+					"name": "Посмотреть результаты",
 					"priority": 9,
 					"action": "./viewtxt.sh result*.txt",
 					"param": "",
 					"exitmenu": false
 				},
 				{
-					"name": "View log",
+					"name": "Посмотреть лог",
 					"priority": 10,
 					"action": "./viewtxt.sh log.txt",
 					"param": "",
 					"exitmenu": false
 				},
 				{
-					"name": "Kill process and exit",
+					"name": "Убить процесс и выйти",
 					"priority": 11,
 					"action": "ps aux | grep [m]ailpush | awk '{print $2}' | xargs -i kill {}",
 					"param": "",
 					"exitmenu": true
 				},
 				{
-					"name": "How to use",
+					"name": "Как использовать",
 					"priority": 12,
-					"action": "./viewtxt.sh how_to_use.md",
+					"action": "./viewtxt.sh README.md",
 					"param": "",
 					"exitmenu": false
+				},
+                                {
+					"name": "Переведено Dark_AssassinUA",
+					"priority": 1000,
+					"exitmenu": false,
+					"checked": true,
+					"status": false,
+					"refresh": false,
+					"action": "xxxx",
+					"internal": "status version MailPush 1.7RU"
 				}
+
 			]
 		}
 	]
